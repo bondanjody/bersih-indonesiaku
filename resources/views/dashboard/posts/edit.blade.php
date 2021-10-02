@@ -5,7 +5,7 @@
     <h1 class="h2">Edit post</h1>
 </div>
 <div class="col-md-12">
-    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5">
+    <form method="post" action="/dashboard/posts/{{ $post->slug }}" class="mb-5" enctype="multipart/form-data">
         @method('put')
         @csrf 
         <div class="mb-3">
@@ -39,6 +39,21 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="image" class="form-label">Post Image</label>
+            <input type="hidden" name="oldImage" value="{{ $post->image }}">
+            @if ($post->image)
+            <img class="img-priview img-fluid mb-3 d-block" src="{{ asset('storage/'.$post->image) }}">
+            @else
+            <img class="img-priview img-fluid mb-3">
+            @endif
+            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="priviewImage()">
+             @error('category_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="slug" class="form-label">Body</label>
                 <input id="body" type="hidden" name="body" value="{{ old('body',$post->body) }}">
                 <trix-editor input="body"></trix-editor>
@@ -62,6 +77,20 @@
     document.addEventListener('trix-file-accept', function(e){
         e.preventDefault();
     })
+
+    function priviewImage() {
+        const image = document.querySelector('#image');
+        const imgPriview = document.querySelector('.img-priview');
+
+        imgPriview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPriview.src = oFREvent.target.result;
+        }
+    }
 </script>
 
 @endsection
