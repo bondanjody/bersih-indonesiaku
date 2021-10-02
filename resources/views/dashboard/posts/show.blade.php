@@ -5,8 +5,12 @@
         <div class="col-lg-12">
              <h3 class="mb-3">{{ $post->title }}</h3>
              <a href="/dashboard/posts" class="btn btn-success"><span data-feather="arrow-left"></span> Back to all my posts</a>
-             <a href="" class="btn btn-warning"><span data-feather="edit"></span> Edit post</a>
-             <a href="" class="btn btn-danger"><span data-feather="trash-2"></span> Delete post</a>
+             <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><span data-feather="edit"></span> Edit post</a>
+             <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button onclick="return confirm('Are you sure to delete this post?')" class="btn btn-danger "><span data-feather="trash-2"></span> Delete Post</button>
+                    </form>
     <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="">
     <article class="my-3 fs-5">
     {!! $post->body !!}
