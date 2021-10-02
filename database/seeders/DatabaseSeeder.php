@@ -16,19 +16,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)->create();
-        Post::factory(20)->create();
+        
         // User::create([
         //     'name' => 'agus',
         //     'email' => 'agus@gmail.com',
         //     'password' => bcrypt('12345')
         // ]);
 
-        // User::create([
-        //     'name' => 'mamang',
-        //     'email' => 'mamang@gmail.com',
-        //     'password' => bcrypt('54321')
-        // ]); 
+        User::create([
+            'name' => 'mamang',
+            'username' => 'mamang.uwu',
+            'email' => 'mamang@gmail.com',
+            'password' => bcrypt('password')
+        ]); 
         
         Category::create([
             'name' => 'Personal',
@@ -44,6 +44,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Web Design',
             'slug' => 'web-design'
         ]);
+
+        User::factory(5)->create();
+        Post::factory(20)->create();
 
         // Post::create([
         //     'title' => 'judul pertama',
