@@ -44,10 +44,17 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
+        // $validateData = $request->validate([
+        //     'title' => 'required|max:255',
+        //     'slug' => 'required|unique:posts',
+        //     'image' => 'required|file|max:255',
+        //     'category_id' => 'required',
+        //     'body' => 'required'
+        // ]);
         $validateData = $request->validate([
             'title' => 'required|max:255',
+            'image' => 'required|file',
             'slug' => 'required|unique:posts',
-            'image' => 'required|file|max:255',
             'category_id' => 'required',
             'body' => 'required'
         ]);
@@ -143,7 +150,7 @@ class DashboardPostController extends Controller
 
         Post::destroy($post->id);
 
-        return redirect('/dashboard/posts')->with('success','post has been deleted!');
+        return redirect('/dashboard/posts')->with('success','Post has been deleted!');
     }
 
     public function checkSlug(Request $request) {

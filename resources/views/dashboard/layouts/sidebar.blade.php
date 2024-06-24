@@ -10,7 +10,7 @@
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
               <span data-feather="file-text"></span>
-              My Posts
+              Postingan Saya
             </a>
           </li>
         </ul>
@@ -22,7 +22,7 @@
             <li class="nav-item">
               <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href="/dashboard/categories">
               <span data-feather="grid"></span>
-              Post categories
+              Categories
             </a>
             </li>
           </ul>

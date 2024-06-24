@@ -62,6 +62,7 @@
              @enderror   
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a class="btn btn-secondary" href="/dashboard/posts">Cancel</a>
     </form>
 </div>
 <script>

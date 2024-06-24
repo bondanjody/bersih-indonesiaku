@@ -13,14 +13,16 @@
             @csrf
             <button onclick="return confirm('Are you sure to delete this post?')" class="btn btn-danger "><span data-feather="trash-2"></span> Delete Post</button>
         </form>
-        @if ($post->image)
-        <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid mt-3" alt="" style="max-height: 350px; overflow: hidden;">
-        @else
-        <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="">
-        @endif
-        <article class="my-3 fs-5">
-            {!! $post->body !!}
-        </article>
+        <div>
+            @if ($post->image)
+            <img src="{{ asset('storage/'.$post->image) }}" class="img-fluid mt-3" alt="" style="max-height: 350px; overflow: hidden;">
+            @else
+            <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3" alt="">
+            @endif
+            <article class="my-3 fs-5">
+                {!! $post->body !!}
+            </article>
+        </div>
     </div>
 </div>
 @endsection
