@@ -6,21 +6,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ $active === 'home' ? 'active' : '' }}" href="/">Home</a>
+                    <a class="nav-link text-dark {{ $active === 'home' ? 'active' : '' }}" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark  {{ $active === 'about' ? 'active' : '' }}" href="/about">About</a>
+                    <a class="nav-link text-dark  {{ $active === 'about' ? 'active' : '' }}" href="/about">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark  {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Explore</a>
+                    <a class="nav-link text-dark  {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Jelajahi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark  {{ $active === 'categories' ? 'active' : '' }}"
-                        href="/categories">Categories</a>
+                        href="/categories">Kategori</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark  {{ $active === 'ranking' ? 'active' : '' }}"
                         href="/ranking">Ranking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark  {{ $active === 'cuan' ? 'active' : '' }}"
+                        href="/cuan">Cuan</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

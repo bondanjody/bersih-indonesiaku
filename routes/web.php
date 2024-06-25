@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\CuanController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\RankingController;
 
@@ -42,6 +43,7 @@ Route::get('/about', function () {
 // });
 
 Route::get('/ranking', [RankingController::class, 'index']);
+Route::get('/cuan', [CuanController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
