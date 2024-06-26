@@ -52,7 +52,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Kumpulkan sampahmu, ambil rupiahmu! 💸</h5>
                     <ol>
-                        <li>Pastikan sudah memiliki akun di website Bersih Indonesiaku. Daftar sekarang atau login jika sudah memiliki akun.</li>
+                        <li>Pastikan sudah memiliki akun di website Bersih Indonesiaku. <a href="/register" style="text-decoration: none">Daftar sekarang</a> atau <a href="/login" style="text-decoration: none">login</a> jika sudah memiliki akun.</li>
                         <li>Kumpulkan sampah.</li>
                         <li>Isi data ketersediaan sampah di halaman "Cuan".
                             <div class="card border-warning">
