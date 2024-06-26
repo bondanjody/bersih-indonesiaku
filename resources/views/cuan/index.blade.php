@@ -5,7 +5,41 @@
     <div>
         <!-- Jika pengguna telah login -->
         @auth
-            <p>Silahkan isi data berikut !</p>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Cuan Maksimal!</h3>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Isi Form Data Penjualan Sampah</h5>
+                    <form>
+                        <div class="form-group py-2">
+                          <label for="name">Nama:</label>
+                          <input type="text" class="form-control" id="name" placeholder="Masukkan nama Anda" name="name">
+                        </div>
+                        <div class="form-group py-2">
+                          <label for="city">Kabupaten/Kota:</label>
+                          <select class="form-control" id="city" name="city">
+                            <option>- Pilih Kabupaten/Kota -</option>
+                            <option>Kabupaten Bekasi</option>
+                            <option>Kota Bekasi</option>
+                            <option>Kabupaten Wonogiri</option>
+                          </select>
+                        </div>
+                        <div class="form-group py-2">
+                          <label for="address">Alamat:</label>
+                          <textarea class="form-control" id="address" rows="3" placeholder="Masukkan alamat Anda" name="address"></textarea>
+                        </div>
+                        <div class="form-group py-2">
+                          <label for="image">Upload Gambar:</label>
+                          <input type="file" class="form-control-file" id="image" name="image">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                      </form>
+                </div>
+            </div>
+        </div>
         @endauth
 
         <!-- Jika pengguna belum login -->
@@ -17,11 +51,6 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Kumpulkan sampahmu, ambil rupiahmu! 💸</h5>
-                    {{-- <p class="card-text">
-                        1. Bikin akun di website Bersih Indonesiaku<br>
-                        2. Kumpulkan sampah<br>
-                        3. Isi formulir ketersediaan sampah
-                    </p> --}}
                     <ol>
                         <li>Pastikan sudah memiliki akun di website Bersih Indonesiaku. Daftar sekarang atau login jika sudah memiliki akun.</li>
                         <li>Kumpulkan sampah.</li>
